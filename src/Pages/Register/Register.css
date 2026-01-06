@@ -1,0 +1,255 @@
+/* Register Container */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  background: var(--bg-gradient);
+}
+
+/* Background Blobs for specific Register ambiance */
+.register-container::before,
+.register-container::after {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--secondary) 0%, transparent 70%);
+  opacity: 0.12;
+  z-index: 0;
+  animation: floatReverse 25s infinite ease-in-out;
+}
+
+.register-container::before {
+  top: -300px;
+  right: -100px;
+}
+
+.register-container::after {
+  bottom: -300px;
+  left: -100px;
+  background: radial-gradient(circle at center, var(--accent) 0%, transparent 70%);
+  animation-delay: -5s;
+  opacity: 0.08;
+}
+
+/* Register Form Card */
+.register-form {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  padding: 3rem;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  /* Slightly wider */
+  box-shadow: var(--shadow-lg);
+  animation: bgFadeUp 0.8s var(--transition-normal) backwards;
+}
+
+/* Typography */
+.register-form h2 {
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.register-form h2::after {
+  content: 'Join our community today.';
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.form-group input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 4px rgba(148, 180, 193, 0.15);
+}
+
+.form-group:focus-within label {
+  color: var(--text-main);
+}
+
+/* Button Styling */
+.register-form button {
+  width: 100%;
+  padding: 1.1rem;
+  margin-top: 1.5rem;
+  background: var(--accent);
+  color: var(--bg-main);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.register-form button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(234, 224, 207, 0.2);
+}
+
+.register-form button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.register-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: grayscale(0.2);
+}
+
+/* Error Messages */
+.error-message {
+  background: var(--error-bg);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: var(--error-text);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  display: inline-block;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.login-link a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform var(--transition-fast);
+}
+
+.login-link a:hover {
+  color: var(--accent);
+}
+
+.login-link a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Animations */
+@keyframes bgFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatReverse {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-20px, -40px);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 2rem;
+  }
+
+  .register-form h2 {
+    font-size: 1.75rem;
+  }
+}

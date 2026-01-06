@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette - Updated for Higher Contrast (Lighter BG, Darker Surface) */
+  /* 60% - Dominant Color (Backgrounds) - LIGHTER */
+  --bg-main: #547792;
+  --bg-gradient: linear-gradient(135deg, #547792 0%, #406078 100%);
+
+  /* 30% - Secondary Color (Cards/Containers) - DARKER */
+  --surface: rgba(33, 52, 72, 0.95);
+  /* Deep Navy */
+  --surface-hover: rgba(26, 43, 60, 0.95);
+
+  /* Accent Colors */
+  --secondary: #213448;
+  --secondary-light: #94B4C1;
+
+  /* 10% - Accent Color (Primary Buttons, Highlights, CTAs) */
+  --accent: #EAE0CF;
+  /* Cream */
+  --accent-hover: #ffffff;
+
+  /* Semantic Colors */
+  --primary: var(--secondary-light);
+  --primary-hover: #ffffff;
+  --primary-gradient: linear-gradient(135deg, #EAE0CF 0%, #D6CDBE 100%);
+
+  /* Surface & Glassmorphism */
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --text-main: #EAE0CF;
+  --text-secondary: #94B4C1;
+  --text-muted: rgba(234, 224, 207, 0.5);
+  --text-placeholder: rgba(234, 224, 207, 0.3);
+
+  /* Borders */
+  --border: rgba(148, 180, 193, 0.2);
+  --border-focus: #EAE0CF;
+
+  /* Status */
+  --error-bg: rgba(255, 107, 107, 0.1);
+  --error-text: #ff8e8e;
+
+  /* Typography Font */
+  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Effects */
+  --glass-blur: blur(20px);
+  --shadow-lg: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(33, 52, 72, 0.5);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+button {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
