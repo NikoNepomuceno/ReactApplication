@@ -1,0 +1,89 @@
+.install-toast {
+    position: fixed;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    max-width: 340px;
+    width: calc(100% - 32px);
+    transition: bottom var(--transition-normal);
+  }
+  
+  .install-toast.show {
+    bottom: 24px;
+  }
+  
+  .install-toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .install-toast-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  
+  .install-toast-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .install-toast-text strong {
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .install-toast-text span {
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  
+  .install-toast-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .install-btn-dismiss,
+  .install-btn-install {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+  }
+  
+  .install-btn-dismiss {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+  
+  .install-btn-dismiss:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+  }
+  
+  .install-btn-install {
+    background: var(--accent);
+    color: var(--secondary);
+  }
+  
+  .install-btn-install:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+  }
