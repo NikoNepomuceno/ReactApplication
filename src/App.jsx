@@ -5,10 +5,12 @@ import InstallPrompt from './components/InstallPrompt/InstallPrompt';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Home from './Pages/Home/Home';
+import { ToastProvider } from './context/ToastContext';
 
 function App() {
   return (
     <AuthProvider>
+      <ToastProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -23,6 +25,7 @@ function App() {
         </Routes>      
         <InstallPrompt />
       </BrowserRouter>
+      </ToastProvider>
     </AuthProvider>
   );
 };

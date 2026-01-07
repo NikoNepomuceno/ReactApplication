@@ -4,12 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "npm run dev && cd server && npm run dev",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:local": "npm run build && cp -r dist/* /var/www/reactapp/dist/"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
     "axios": "^1.13.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
