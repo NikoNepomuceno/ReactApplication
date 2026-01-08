@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (CRITICAL)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +30,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+
+# Coverage directory
+coverage
+
+# Cache
+.cache
+.parcel-cache
+
+# Vite cache
+*.local
+.vite
