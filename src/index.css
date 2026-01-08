@@ -1,59 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  /* Color Palette - Updated for Higher Contrast (Lighter BG, Darker Surface) */
-  /* 60% - Dominant Color (Backgrounds) - LIGHTER */
-  --bg-main: #547792;
-  --bg-gradient: linear-gradient(135deg, #547792 0%, #406078 100%);
-
-  /* 30% - Secondary Color (Cards/Containers) - DARKER */
-  --surface: rgba(33, 52, 72, 0.95);
-  /* Deep Navy */
-  --surface-hover: rgba(26, 43, 60, 0.95);
-
-  /* Accent Colors */
-  --secondary: #213448;
-  --secondary-light: #94B4C1;
-
-  /* 10% - Accent Color (Primary Buttons, Highlights, CTAs) */
-  --accent: #EAE0CF;
-  /* Cream */
-  --accent-hover: #ffffff;
-
-  /* Semantic Colors */
-  --primary: var(--secondary-light);
-  --primary-hover: #ffffff;
-  --primary-gradient: linear-gradient(135deg, #EAE0CF 0%, #D6CDBE 100%);
-
-  /* Surface & Glassmorphism */
-  --glass-border: rgba(255, 255, 255, 0.1);
+  /* Core Palette */
+  --bg-main: #000000;
+  --text-main: #ffffff;
+  --accent-yellow: #FACC15;
+  --accent-red: #ff3333;
+  --border-color: #ffffff;
+  --surface-dark: #111111;
 
   /* Typography */
-  --text-main: #EAE0CF;
-  --text-secondary: #94B4C1;
-  --text-muted: rgba(234, 224, 207, 0.5);
-  --text-placeholder: rgba(234, 224, 207, 0.3);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  /* Borders */
-  --border: rgba(148, 180, 193, 0.2);
-  --border-focus: #EAE0CF;
-
-  /* Status */
-  --error-bg: rgba(255, 107, 107, 0.1);
-  --error-text: #ff8e8e;
-
-  /* Typography Font */
-  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
-
-  /* Effects */
-  --glass-blur: blur(20px);
-  --shadow-lg: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 25px rgba(33, 52, 72, 0.5);
-
-  /* Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Spacing & Layout */
+  --spacing-unit: 1rem;
+  --border-width: 2px;
+  --shadow-offset: 8px;
 }
 
 * {
@@ -64,41 +27,75 @@
 
 body {
   margin: 0;
-  font-family: var(--font-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-gradient);
+  font-family: var(--font-mono);
+  /* Default to mono for tech feel */
+  background-color: var(--bg-main);
   color: var(--text-main);
-  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Typography Overrides */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 button {
-  font-family: inherit;
+  font-family: var(--font-display);
+  cursor: pointer;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+  width: 10px;
+  background: var(--bg-main);
+  border-left: 1px solid #333;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  background: #333;
+  border: 1px solid var(--bg-main);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--accent-yellow);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-yellow);
+  color: var(--bg-main);
+}
+
+/* Utilities */
+.text-yellow {
+  color: var(--accent-yellow);
+}
+
+.text-red {
+  color: var(--accent-red);
+}
+
+.bg-black {
+  background-color: var(--bg-main);
+}
+
+.border-white {
+  border: 1px solid var(--border-color);
+}
+
+/* Global Wireframe Background (Optional utility) */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }

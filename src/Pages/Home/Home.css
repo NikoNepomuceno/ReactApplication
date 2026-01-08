@@ -1,0 +1,224 @@
+/* src/Pages/Home/Home.css */
+.home-container {
+    padding: 2rem;
+    min-height: 100vh;
+    margin-left: 280px;
+    /* Offset for fixed sidebar */
+    background-color: var(--bg-main);
+    background-image:
+        radial-gradient(circle at 50% 50%, #111 0%, #000 70%),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    color: var(--text-main);
+    position: relative;
+    width: calc(100% - 280px);
+}
+
+/* Header */
+.dashboard-header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header-title h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.header-meta {
+    font-family: var(--font-mono);
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* User Profile Badge */
+.user-badge {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-main);
+    box-shadow: 4px 4px 0px 0px var(--border-color);
+}
+
+.badge-status {
+    width: 10px;
+    height: 10px;
+    background-color: #4ade80;
+    animation: blink 2s infinite;
+}
+
+.badge-name {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Widget/Card Style */
+.cyber-card {
+    border: 2px solid var(--border-color);
+    padding: 2rem;
+    position: relative;
+    background: var(--bg-main);
+    transition: transform 0.2s ease;
+}
+
+.cyber-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px 0px var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+
+.cyber-card:hover h3 {
+    color: var(--accent-yellow);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+}
+
+.card-icon {
+    font-family: var(--font-mono);
+    color: #666;
+}
+
+.card-content {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Action Button */
+.action-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--text-main);
+    color: var(--bg-main);
+}
+
+.action-btn.danger {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.action-btn.danger:hover {
+    background: var(--accent-red);
+    color: var(--bg-main);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        padding-top: 60px;
+        /* Space for mobile menu toggle */
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .header-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .user-badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        padding: 1rem;
+        padding-top: 60px;
+    }
+
+    .header-title h1 {
+        font-size: 2rem;
+    }
+
+    .cyber-card {
+        padding: 1.5rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .header-title h1 {
+        font-size: 1.75rem;
+    }
+
+    .cyber-card {
+        padding: 1rem;
+    }
+
+    .user-badge {
+        padding: 0.5rem 1rem;
+    }
+}

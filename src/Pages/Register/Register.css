@@ -288,3 +288,67 @@ button[type="submit"]:disabled {
   display: flex;
   justify-content: space-between;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .register-form {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .wireframe-cube {
+    width: 40vh;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 1rem;
+    background-size: 100% 100%, 20px 20px, 20px 20px;
+  }
+
+  .register-form {
+    padding: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .register-title {
+    font-size: 1.75rem;
+  }
+
+  .corner-text {
+    font-size: 0.6rem;
+  }
+
+  .corner-text.top-left {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .corner-text.bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 150px;
+  }
+
+  .visual-modules {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .register-form {
+    padding: 1rem;
+  }
+
+  .register-title {
+    font-size: 1.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.7rem;
+  }
+}
